@@ -1,0 +1,5 @@
+Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:49 CEST 2023cantidad:2medidanulllacteofalse
+Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:51 CEST 2023cantidad:2medidanulllacteofalse
+Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:53 CEST 2023cantidad:2medidanulllacteofalse
+Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:55 CEST 2023cantidad:2medidanulllacteofalse
+Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:58 CEST 2023cantidad:2medidanulllacteofalse
