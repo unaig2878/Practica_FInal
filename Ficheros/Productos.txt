@@ -1,5 +1,5 @@
-Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:49 CEST 2023cantidad:2medidanulllacteofalse
-Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:51 CEST 2023cantidad:2medidanulllacteofalse
-Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:53 CEST 2023cantidad:2medidanulllacteofalse
-Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:55 CEST 2023cantidad:2medidanulllacteofalse
-Cliente: 2 2.0, gas: false fecha: Sun May 21 21:39:58 CEST 2023cantidad:2medidanulllacteofalse
+Cliente: 2 2.0, gas: false fecha: Wed May 31 20:48:48 CEST 2023 cantidad:1 lacteofalse
+Cliente: 2 2.0, gas: false fecha: Wed May 31 20:48:50 CEST 2023 cantidad:2 lacteofalse
+Cliente: 2 2.0, gas: false fecha: Wed May 31 20:48:52 CEST 2023 cantidad:2 lacteofalse
+Cliente: 2 2.0, gas: false fecha: Wed May 31 20:48:54 CEST 2023 cantidad:22 lacteofalse
+Cliente: 2 2.0, gas: false fecha: Wed May 31 20:48:57 CEST 2023 cantidad:2 lacteofalse

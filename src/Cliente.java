@@ -32,10 +32,15 @@ public class Cliente implements Serializable {
 			String apellido1 = sc.nextLine();
 			cliente1.setApellidos(apellido1);
 
-			System.out.println("Escriba su telefono");
-			telefono1 = sc.nextInt();
-			sc.nextLine();
-			cliente1.setTelefono(telefono1);
+			try {
+				System.out.println("Escriba su telefono");
+				telefono1 = sc.nextInt();
+				sc.nextLine();
+				Excepciones.validarTelefono(telefono1);
+				cliente1.setTelefono(telefono1);
+			} catch (Excepciones.TelefonoInvalidoException e) {
+				System.out.println("Error al ingresar el número de teléfono del Cliente 1: " + e.getMessage());
+			}
 
 			System.out.println("Escriba su Direccion");
 			String direccion1 = sc.nextLine();
@@ -62,16 +67,18 @@ public class Cliente implements Serializable {
 					telefono2 = sc.nextInt();
 					sc.nextLine();
 
-					// Verificar que el número de teléfono sea diferente al del Cliente 1
+					Excepciones.validarTelefono(telefono2);
+
+					// excepciones
 					if (telefono2 == telefono1) {
 						throw new Excepciones.TelefonoInvalidoException(
 								"El número de teléfono ya está en uso. Pruebe de nuevo.");
 					}
 
-					cliente2.setTelefono(telefono2);
+					cliente3.setTelefono(telefono2);
 					break;
 				} catch (Excepciones.TelefonoInvalidoException e) {
-					System.out.println("Error al ingresar el número de teléfono del Cliente 2: " + e.getMessage());
+					System.out.println("Error al ingresar el número de teléfono del Cliente 3: " + e.getMessage());
 				}
 			}
 
@@ -94,15 +101,15 @@ public class Cliente implements Serializable {
 			cliente3.setApellidos(apellido3);
 
 			// Bucle para verificar que el número no esté siendo usado por ningún otro
-			// cliente
 			while (true) {
 				try {
 					System.out.println("Escriba su telefono");
 					telefono3 = sc.nextInt();
 					sc.nextLine();
 
-					// Verificar que el número de teléfono sea diferente al del Cliente 1 y Cliente
-					// 2
+					Excepciones.validarTelefono(telefono3);
+
+					// excepciones
 					if (telefono3 == telefono1 || telefono3 == telefono2) {
 						throw new Excepciones.TelefonoInvalidoException(
 								"El número de teléfono ya está en uso. Pruebe de nuevo.");
@@ -114,6 +121,7 @@ public class Cliente implements Serializable {
 					System.out.println("Error al ingresar el número de teléfono del Cliente 3: " + e.getMessage());
 				}
 			}
+
 
 			System.out.println("Escriba su Direccion");
 			String direccion3 = sc.nextLine();

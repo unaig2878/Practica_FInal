@@ -20,7 +20,7 @@ public class GestionProducto {
 		double precio = sc.nextDouble();
 		comida.setPrecio(precio);
 
-		sc.nextLine(); // Limpiar el buffer de entrada
+		sc.nextLine();
 
 		System.out.println("Ingrese la fecha de caducidad de la comida (formato dd/MM/yyyy):");
 		String fechaCaducidadStr = sc.nextLine();
@@ -41,7 +41,7 @@ public class GestionProducto {
 		int cantidad = sc.nextInt();
 		comida.setCantidad(cantidad);
 
-		sc.nextLine(); // Limpiar el buffer de entrada
+		sc.nextLine();
 
 		System.out.println("Ingrese si la comida es perecedera (1 = Sí / 2 = No):");
 		String perecederoStr = sc.nextLine();
@@ -52,7 +52,7 @@ public class GestionProducto {
 			perecedero = false;
 		} else {
 			System.out.println("Opción no válida. Se asumirá que no es perecedera.");
-			perecedero = false; // Valor predeterminado en caso de opción inválida
+			perecedero = false;
 		}
 		comida.setPerecedero(perecedero);
 
@@ -69,11 +69,11 @@ public class GestionProducto {
 			vegano = false;
 		} else {
 			System.out.println("Opción no válida. Se asumirá que no es vegana.");
-			vegano = false; // Valor predeterminado en caso de opción inválida
+			vegano = false;
 		}
 		comida.setVegano(vegano);
 
-		sc.nextLine(); // Limpiar el buffer de entrada
+		sc.nextLine();
 
 		System.out.println("Ingrese la fecha de envasado de la comida (formato dd/MM/yyyy):");
 		String fechaEnvaseStr = sc.nextLine();
@@ -87,7 +87,7 @@ public class GestionProducto {
 
 		comidas.add(comida);
 
-		// Obtener la fecha de caducidad
+
 		String fechaCaducidad = comida.obtener_caducidad();
 		System.out.println(fechaCaducidad);
 
@@ -106,7 +106,7 @@ public class GestionProducto {
 		double precio = sc.nextDouble();
 		bebida.setPrecio(precio);
 
-		sc.nextLine(); // Limpiar el buffer de entrada
+		sc.nextLine();
 
 		System.out.println("Ingrese la fecha de caducidad de la bebida (formato dd/mm/aaaa):");
 		String fechaCaducidadStr = sc.nextLine();
@@ -127,11 +127,9 @@ public class GestionProducto {
 		int cantidad = sc.nextInt();
 		bebida.setCantidad(cantidad);
 
-		// Solicitar y establecer los demás atributos específicos de Bebida
-		// ...
+
 		bebidas.add(bebida);
 		return bebida;
 	}
 
-	// Otros métodos para gestionar productos...
 }

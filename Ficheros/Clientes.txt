@@ -1,0 +1,3 @@
+Cliente: unai garcia, Teléfono: 678428710 direccion: 678428710
+Cliente: 678428710 678428710, Teléfono: 0 direccion: 678428710
+Cliente: 678428710 678428710, Teléfono: 678428713 direccion: 678428710

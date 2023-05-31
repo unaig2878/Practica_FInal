@@ -1,5 +1,8 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
 
 public abstract class Producto implements Serializable {
 	protected String nombre;
@@ -15,6 +18,82 @@ public abstract class Producto implements Serializable {
 		this.estado = "";
 		this.cantidad = cantidad;
 	}
+
+	public static List<Integer> Stockage(Scanner sc, int cantproducto1, int cantproducto2, int resp1) {
+		while (cantproducto1 == 0 && cantproducto2 == 0) {
+			System.out.print("Quiere producto1 1.si 2.no");
+			cantproducto1 = sc.nextInt();
+			System.out.print("Quiere producto2 1.si 2.no ");
+			cantproducto2 = sc.nextInt();
+		}
+
+		// Creamos un ArrayList para el stock de cada producto
+		ArrayList<Integer> list = new ArrayList<>();
+		ArrayList<Integer> list2 = new ArrayList<>();
+
+		// Llenamos el stock con 30 productos para cada producto
+		for (int i = 0; i < 30; i++) {
+			list.add(i);
+			list2.add(i);
+		}
+
+		System.out.println("### Menu Stockage ###");
+		System.out.println("Nos quedan 30 productos en stock de cada producto");
+
+		while (cantproducto1 > 0) {
+			System.out.print("Cuántos valores desea quitar del primer producto? ");
+			if (cantproducto1 <= list.size()) {
+				list.subList(list.size() - cantproducto1, list.size()).clear();
+				System.out.println("Ha pedido: " + cantproducto1 + " unidades");
+				System.out.println("En stock nos quedan disponibles " + list.size() + " del primer producto");
+				break;
+			} else {
+				System.out.println("No tenemos " + cantproducto1 + " del primer producto en stock");
+				System.out.println("Desea volver más tarde? 1. Sí 2. No");
+				resp1 = sc.nextInt();
+				if (resp1 == 1) {
+					while (list.size() < 30) {
+						list.add(0);
+					}
+					System.out.println("Ya tiene stock, comience de nuevo");
+				} else {
+					System.out.println("Muchas gracias por su visita");
+					return null;
+				}
+			}
+		}
+
+		while (cantproducto2 > 0) {
+			System.out.print("Cuántos valores desea quitar del segundo producto? ");
+			if (cantproducto2 <= list2.size()) {
+				list2.subList(list2.size() - cantproducto2, list2.size()).clear();
+				System.out.println("Ha pedido: " + cantproducto2 + " unidades");
+				System.out.println("En stock nos quedan disponibles " + list2.size() + " del segundo producto");
+				break;
+			} else {
+				System.out.println("No tenemos " + cantproducto2 + " del segundo producto en stock");
+				System.out.println("Desea volver más tarde? 1. Sí 2. No");
+				int resp2 = sc.nextInt();
+				if (resp2 == 1) {
+					while (list2.size() < 30) {
+						list2.add(0);
+					}
+					System.out.println("Ya tiene stock, comience de nuevo");
+				} else {
+					System.out.println("Muchas gracias por su visita");
+					return null;
+				}
+			}
+		}
+
+		// Devuelve el stock restante para ambos productos
+		List<Integer> stocks = new ArrayList<>();
+		stocks.add(list.size());
+		stocks.add(list2.size());
+		return stocks;
+	}
+
+
 
 
 

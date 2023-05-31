@@ -17,7 +17,7 @@ public class Pasarela {
 		System.out.println(codigoPago1);
 	}
 
-//metodo de pago efectivo
+
 	public void pagoTarjeta(Scanner sc) {
 		try {
 			System.out.println("Ha seleccionado pago en tarjeta");
@@ -103,7 +103,7 @@ public class Pasarela {
 	}
 
 
-	// metodo para que elijan que tipo de pago quieren
+
 	public void elegirpago(Pasarela pago, Scanner sc) {
 		System.out.println("Como desea pagar");
 		System.out.println("1.Efectivo");
@@ -149,4 +149,6 @@ public class Pasarela {
 	private String generarCodigoPago() {
 		return String.valueOf(new Date().getTime());
 	}
+
+
 }

@@ -62,7 +62,7 @@ public class Bebida extends Producto implements Serializable {
 
 	@Override
 	public void detalle_producto() {
-		// Implementación específica para mostrar los atributos de la bebida
+		// Implementación para mostrar los atributos de la bebida
 		System.out.println("Nombre: " + nombre);
 		System.out.println("Precio: " + precio);
 		System.out.println("Fecha de caducidad: " + fechaCaducidad);
