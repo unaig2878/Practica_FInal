@@ -2,22 +2,38 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase que representa una pasarela de pago para realizar transacciones.
+ */
 public class Pasarela {
 	private double importe;
 	String codigoPago;
 
+	/**
+	 * Constructor de la clase Pasarela. Inicializa el importe en 0 y genera un
+	 * código de pago único basado en la fecha y hora actual.
+	 */
 	public Pasarela() {
 		this.importe = 0;
 		this.codigoPago = String.valueOf((new Date()).getTime());
 	}
 
+	/**
+	 * Genera un código de pago único basado en la fecha y hora actual.
+	 *
+	 * @param codigoPago1 El código de pago proporcionado por el usuario.
+	 */
 	public void CodigoPago(String codigoPago1) {
 		codigoPago = String.valueOf((new Date()).getTime());
 		codigoPago1 = codigoPago;
 		System.out.println(codigoPago1);
 	}
 
-
+	/**
+	 * Realiza un pago con tarjeta.
+	 *
+	 * @param sc El objeto Scanner utilizado para la entrada del usuario.
+	 */
 	public void pagoTarjeta(Scanner sc) {
 		try {
 			System.out.println("Ha seleccionado pago en tarjeta");
@@ -51,6 +67,11 @@ public class Pasarela {
 		}
 	}
 
+	/**
+	 * Realiza un pago en efectivo.
+	 *
+	 * @param sc El objeto Scanner utilizado para la entrada del usuario.
+	 */
 	public void pagoEfectivo(Scanner sc) {
 		try {
 			System.out.println("Indique el importe total a pagar:");
@@ -102,7 +123,12 @@ public class Pasarela {
 		}
 	}
 
-
+	/**
+	 * Permite al usuario elegir el método de pago.
+	 *
+	 * @param pago La instancia de Pasarela utilizada para realizar el pago.
+	 * @param sc   El objeto Scanner utilizado para la entrada del usuario.
+	 */
 
 	public void elegirpago(Pasarela pago, Scanner sc) {
 		System.out.println("Como desea pagar");
@@ -120,6 +146,11 @@ public class Pasarela {
 		}
 	}
 
+	/**
+	 * Realiza un pago mediante cuenta bancaria.
+	 *
+	 * @param sc El objeto Scanner utilizado para la entrada del usuario.
+	 */
 	public void pagoCuenta(Scanner sc) {
 		try {
 			System.out.println("Ha seleccionado pago a cuenta");

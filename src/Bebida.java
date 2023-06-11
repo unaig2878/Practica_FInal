@@ -2,9 +2,13 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Clase que representa una bebida, que es un tipo de producto.
+ */
 public class Bebida extends Producto implements Serializable {
 	private boolean gaseoso;
 	private boolean lacteo;
+
 
 	public boolean isGaseoso() {
 		return gaseoso;
@@ -32,6 +36,17 @@ public class Bebida extends Producto implements Serializable {
 
 	private String medida;
 
+	/**
+	 * Constructor de la clase Bebida.
+	 * 
+	 * @param nombre         El nombre de la bebida.
+	 * @param precio         El precio de la bebida.
+	 * @param fechaCaducidad La fecha de caducidad de la bebida.
+	 * @param gaseoso        Indica si la bebida es gaseosa.
+	 * @param lacteo         Indica si la bebida es láctea.
+	 * @param medida         La medida de la bebida.
+	 * @param cantidad       La cantidad de bebida disponible.
+	 */
 	public Bebida(String nombre, double precio, Date fechaCaducidad, boolean gaseoso, boolean lacteo, String medida,int cantidad) {
 		super(nombre, precio, fechaCaducidad, cantidad);
 		this.gaseoso = gaseoso;

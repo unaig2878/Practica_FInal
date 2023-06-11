@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase abstracta que representa un producto.
+ */
 public abstract class Producto implements Serializable {
 	protected String nombre;
 	protected double precio;
@@ -11,6 +14,14 @@ public abstract class Producto implements Serializable {
 	protected String estado;
 	protected int cantidad;
 
+	/**
+	 * Constructor de la clase Producto.
+	 *
+	 * @param nombre         El nombre del producto.
+	 * @param precio         El precio del producto.
+	 * @param fechaCaducidad La fecha de caducidad del producto.
+	 * @param cantidad       La cantidad disponible del producto.
+	 */
 	public Producto(String nombre, double precio, Date fechaCaducidad, int cantidad) {
 		this.nombre = nombre;
 		this.precio = precio;
@@ -19,6 +30,15 @@ public abstract class Producto implements Serializable {
 		this.cantidad = cantidad;
 	}
 
+	/**
+	 * Método estático que gestiona el stock de los productos.
+	 *
+	 * @param sc            El objeto Scanner utilizado para la entrada del usuario.
+	 * @param cantproducto1 La cantidad deseada del primer producto.
+	 * @param cantproducto2 La cantidad deseada del segundo producto.
+	 * @param resp1         La respuesta del usuario para volver más tarde.
+	 * @return Una lista con el stock restante de cada producto.
+	 */
 	public static List<Integer> Stockage(Scanner sc, int cantproducto1, int cantproducto2, int resp1) {
 		while (cantproducto1 == 0 && cantproducto2 == 0) {
 			System.out.print("Quiere producto1 1.si 2.no");

@@ -1,11 +1,23 @@
 import java.io.Serializable;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un cliente.
+ */
 public class Cliente implements Serializable {
 	private String nombre;
 	private String apellidos;
 	private int telefono;
 	private String direccion;
+
+	/**
+	 * Constructor de la clase Cliente.
+	 * 
+	 * @param nombre    El nombre del cliente.
+	 * @param apellidos Los apellidos del cliente.
+	 * @param telefono  El número de teléfono del cliente.
+	 * @param direccion La dirección del cliente.
+	 */
 
 	public Cliente(String nombre, String apellidos, int telefono, String direccion) {
 		super();
@@ -19,6 +31,15 @@ public class Cliente implements Serializable {
 	public String toString() {
 		return "Cliente: " + nombre + " " + apellidos + ", Teléfono: " + telefono + " direccion: " + direccion;
 	}
+
+	/**
+	 * Método estático para ingresar clientes.
+	 * 
+	 * @param cliente1 El primer cliente.
+	 * @param cliente2 El segundo cliente.
+	 * @param cliente3 El tercer cliente.
+	 * @param sc       El objeto Scanner para la entrada de datos.
+	 */
 
 	public static void ingresarClientes(Cliente cliente1, Cliente cliente2, Cliente cliente3, Scanner sc) {
 		int telefono1 = 0, telefono2 = 0, telefono3;

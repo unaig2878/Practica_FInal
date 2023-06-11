@@ -4,10 +4,30 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Clase que maneja la conexión a la base de datos y realiza operaciones de
+ * inserción.
+ */
 public class Conexion {
+
+	/**
+	 * Controlador JDBC para la base de datos MySQL.
+	 */
 	private static final String CONTROLADOR = "com.mysql.jdbc.Driver";
+
+	/**
+	 * URL de conexión a la base de datos.
+	 */
 	private static final String URL = "jdbc:mysql://localhost:3306/bd_ejemplo?characterEncoding=utf8";
+
+	/**
+	 * Usuario de la base de datos.
+	 */
 	private static final String USUARIO = "root";
+
+	/**
+	 * Contraseña del usuario de la base de datos.
+	 */
 	private static final String CLAVE = "Qwerty";
 
 	static {
@@ -18,6 +38,12 @@ public class Conexion {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Establece una conexión a la base de datos.
+	 *
+	 * @return Objeto Connection que representa la conexión establecida.
+	 */
 
 	public Connection conectar() {
 		Connection conexion = null;
@@ -31,6 +57,12 @@ public class Conexion {
 		return conexion;
 	}
 
+	/**
+	 * Ingresa una lista de comidas y bebidas en la base de datos.
+	 *
+	 * @param comidas Lista de comidas a ingresar.
+	 * @param bebidas Lista de bebidas a ingresar.
+	 */
 	public void ingresarProductos(List<Comida> comidas, List<Bebida> bebidas) {
 		try (Connection connection = conectar()) {
 			for (Comida comida : comidas) {
@@ -48,6 +80,13 @@ public class Conexion {
 		}
 	}
 
+	/**
+	 * Inserta una comida en la base de datos.
+	 *
+	 * @param comida     Comida a insertar.
+	 * @param connection Conexión a la base de datos.
+	 * @throws SQLException Si ocurre un error durante la inserción.
+	 */
 	private void insertarComida(Comida comida, Connection connection) throws SQLException {
 		String sql = "INSERT INTO productos (nombre, precio, fecha_caducidad, estado, cantidad, perecedero, calorias, vegano, fecha_envase) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -63,6 +102,14 @@ public class Conexion {
 		statement.executeUpdate();
 	}
 
+	/**
+	 * Inserta una bebida en la base de datos.
+	 *
+	 * @param bebida     Bebida a insertar.
+	 * @param connection Conexión a la base de datos.
+	 * @throws SQLException Si ocurre un error durante la inserción.
+	 */
+
 	private void insertarBebida(Bebida bebida, Connection connection) throws SQLException {
 		String sql = "INSERT INTO productos (nombre, precio, fecha_caducidad, estado, cantidad, gaseoso, lacteo) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -77,8 +124,13 @@ public class Conexion {
 	}
 
 
-	// ...
-
+	/**
+	 * Ingresa clientes en la base de datos.
+	 *
+	 * @param cliente1 Primer cliente a ingresar.
+	 * @param cliente2 Segundo cliente a ingresar.
+	 * @param cliente3 Tercer cliente a ingresar.
+	 */
 
 	public void ingresarClientesBD(Cliente cliente1, Cliente cliente2, Cliente cliente3) {
 		try (Connection connection = conectar()) {
@@ -115,6 +167,12 @@ public class Conexion {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Guarda un ticket en la base de datos.
+	 *
+	 * @param ticket Ticket a guardar.
+	 */
 	public void guardarTicket(Ticket ticket) {
 	    try (Connection connection = conectar()) {
 	        String sql = "INSERT INTO tickets (nombre_cliente, telefono_cliente, cantidad_productos, precio_total) VALUES (?, ?, ?, ?)";

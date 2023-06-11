@@ -4,10 +4,23 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase que gestiona la creación de productos (comidas y bebidas).
+ */
 public class GestionProducto {
-
+	/**
+	 * Constructor de la clase GestionProducto.
+	 */
 	public GestionProducto() {
 	}
+
+	/**
+	 * Crea una nueva comida con los datos proporcionados por el usuario.
+	 *
+	 * @param sc      El objeto Scanner utilizado para la entrada del usuario.
+	 * @param comidas La lista de comidas donde se agregará la nueva comida.
+	 * @return La comida creada.
+	 */
 
 	public Comida crearComida(Scanner sc, List<Comida> comidas) {
 		Comida comida = new Comida(null, 0, null, false, 0, false, null, 0);

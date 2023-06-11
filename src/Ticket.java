@@ -1,11 +1,20 @@
-
+/**
+ * Clase que representa un ticket de compra.
+ */
 public class Ticket {
     private String nombreCliente;
     private int telefonoCliente;
     private int cantidadProductos;
     private double precioTotal;
    
-
+	/**
+	 * Constructor de la clase Ticket.
+	 *
+	 * @param nombreCliente     Nombre del cliente.
+	 * @param telefonoCliente   Teléfono del cliente.
+	 * @param cantidadProductos Cantidad de productos en el ticket.
+	 * @param precioTotal       Precio total del ticket.
+	 */
 	public Ticket(String nombreCliente, int telefonoCliente, int cantidadProductos, double precioTotal) {
         this.nombreCliente = nombreCliente;
         this.telefonoCliente = telefonoCliente;

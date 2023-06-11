@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase que gestiona los pedidos e implementa la interfaz Imprimible.
+ */
 public class GestionPedidos implements Imprimible {
 
 	@Override
@@ -9,6 +12,12 @@ public class GestionPedidos implements Imprimible {
 		System.out.println("=== TICKET FINAL DE GESTIÓN DE PEDIDOS ===");
 
 	}
+
+	/**
+	 * Método principal que ejecuta la lógica de gestión de pedidos.
+	 *
+	 * @param args Los argumentos de línea de comandos.
+	 */
 	public static void main(String[] args) {
 		int resp1 = 0;
 		Scanner sc = new Scanner(System.in);

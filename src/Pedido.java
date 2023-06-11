@@ -2,9 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un pedido realizado por un cliente.
+ */
 public class Pedido {
 
-
+	/**
+	 * Realiza un pedido para un cliente.
+	 *
+	 * @param telefonoCliente El número de teléfono del cliente.
+	 * @param resp2           La opción seleccionada por el cliente.
+	 * @param sc              El objeto Scanner utilizado para la entrada del
+	 *                        usuario.
+	 * @param cliente1        El primer cliente registrado.
+	 * @param cliente2        El segundo cliente registrado.
+	 * @param cliente3        El tercer cliente registrado.
+	 * @param comidas         La lista de comidas disponibles.
+	 * @param bebidas         La lista de bebidas disponibles.
+	 */
 
 	public void realizarPedido(int telefonoCliente, int resp2, Scanner sc, Cliente cliente1, Cliente cliente2,
             Cliente cliente3, List<Comida> comidas, List<Bebida> bebidas) {
@@ -108,6 +123,14 @@ public class Pedido {
         }
     }
 
+	/**
+	 * Procesa un pedido de un producto.
+	 *
+	 * @param nomProducto El nombre del producto.
+	 * @param producto    El objeto Producto.
+	 * @param sc          El objeto Scanner utilizado para la entrada del usuario.
+	 * @param descuento   El descuento aplicado al precio del producto.
+	 */
     private void procesarPedido(String nomProducto, Producto producto, Scanner sc, double descuento) {
         System.out.println("Tu producto: " + nomProducto);
         System.out.println("Indique la cantidad que quieres:");
@@ -118,6 +141,14 @@ public class Pedido {
         System.out.println("El precio a pagar por el producto es: " + precioTotal);
     }
 
+	/**
+	 * Crea un ticket a partir de los productos seleccionados por el cliente.
+	 *
+	 * @param cliente   El objeto Cliente.
+	 * @param producto1 El primer producto seleccionado.
+	 * @param producto2 El segundo producto seleccionado.
+	 * @return El objeto Ticket.
+	 */
     private Ticket crearTicket(Cliente cliente, Producto producto1, Producto producto2) {
         double precioTotal = 0.0;
         int cantidadTotal = 0;
